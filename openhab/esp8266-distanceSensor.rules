@@ -1,0 +1,18 @@
+val Number FULL_TANK = 30       // distance in cm
+val Number HALF_FULL_TANK = 60
+val Number EMPTY_TANK = 120
+
+rule "Softener Tank Level"
+when
+  Item SoftenerTankDistance received command
+then
+  var Number level = SoftenerTankDistance.state as Number
+
+  if(level <= HALF_FULL_TANK && level >= FULL_TANK) {
+    SoftenerTankLevel.sendCommand("FULL")
+  } else if(level >= HALF_FULL_TANK && level <= EMPTY_TANK) {
+    SoftenerTankLevel.sendCommand("HALF")
+  } else {
+    SoftenerTankLevel.sendCommand("CHECK")
+  }
+end

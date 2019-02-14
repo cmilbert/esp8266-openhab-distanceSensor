@@ -1,0 +1,4 @@
+Number SoftenerTankDistance "Water Softener Tank Distance" <water>
+String SoftenerTankLevel "Water Softener Tank Level" <water>
+Number UtilityRoom_Temperature "Utility Room Temperature" <temperature>
+Number UtilityRoom_Humidity "Utility Room Humidity" <humidity>
